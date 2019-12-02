@@ -21,13 +21,13 @@ finalized.
 
 For news, updates, and important information about the courses;
 and to discuss things and get in touch with like-minded learning enthusiasts
-[**Join the “Zero to Hero” Spectrum Community][community].
+[**Join the “Zero to Hero” Spectrum Community**][community].
 
-The [**“Zero to Hero” Spectrum Community][community]
+The [**“Zero to Hero” Spectrum Community**][community]
 is free for **anyone** to join.
 
 When there is an important news to be shared, instead of polluting your email
-inboxes, I’ll create a post in the [**“Zero to Hero” Spectrum Community][community]
+inboxes, I’ll create a post in the [**“Zero to Hero” Spectrum Community**][community]
 instead.
 
 I **hate** SPAM with passion and I never send useless junk to your inboxes. 
