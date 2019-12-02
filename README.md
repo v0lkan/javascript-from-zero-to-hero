@@ -11,7 +11,7 @@
 
 ## About
 
-This repository contains the ••source code** and **starter files** of 
+This repository contains the **source code** and the **starter files** of 
 [JavaScript: from Zero to Hero](https://zerotoherojs.com).
 
 It’s a work-in-progress, and it’ll be finalized and tagged once the course is
