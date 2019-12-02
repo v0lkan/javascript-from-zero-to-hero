@@ -42,10 +42,10 @@ lesson.
 
 Let me explain it with an example; it’ll be clearer:
 
-* If you are looking for the completed work for “S04E02: Configuring Prettier 
-  for Visual Studio Code”, then you’ll find it inside the folder `./S04/E02`.
-* IF you want the **starter files** for “S04E02: Configuring Prettier for 
-  Visual Studio Code”, then it is one folder before in alphabetical order,
+* If you are looking for the **completed work** for the lesson “*S04E02: Configuring Prettier 
+  for Visual Studio Code*”, then you’ll find it inside the folder `./S04/E02`.
+* IF you want the **starter files** for the same lesson “*S04E02: Configuring Prettier for 
+  Visual Studio Code*”, then it is **one folder before** in alphabetical order,
   which will be: `./S04/E01`. 
 
 Before I launch the course, I’ll go through each of those folders one-by-one
