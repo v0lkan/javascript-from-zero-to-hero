@@ -42,7 +42,9 @@ I may also add, important side-notes as **README**s into those folders.
 ## Contributions and PRs
 
 Since the code in the repo needs to stay in sync with the videos, I typically do
-not accept PRs. Though, [you are welcome to create an issue][issue], and we
+not accept PRs. 
+
+Though, [you are welcome to create an issue][issue], and we
 can discuss it further there. 
 
 [issue]: https://github.com/v0lkan/javascript-from-zero-to-hero/issues/new "File a New Issue"
