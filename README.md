@@ -55,6 +55,6 @@ Copyright © [Volkan Özçelik](mailto:me@volkan.io). All rights reserved.
 
 I’m distributing the code for your **personal** and **fair use**.
 
-When in doubt about your usage, [feel free to shoot me an email](mailto:me@volkan.io).
+When in doubt, [shoot me an email](mailto:me@volkan.io).
 
-Also, [Check out the license file](LICENSE.md) for details.
+Also, [check out the license file](LICENSE.md) for details.
