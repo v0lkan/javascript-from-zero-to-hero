@@ -26,7 +26,7 @@ Every “**episode**” corresponds to a specific video lecture.
 Each folder contains the **completed work** that you’ll achieve by the end of that
 lecture.
 
-To explain with an example:
+For example:
 
 * If you are looking for the **completed work** for the lesson “*S04E02: Configuring Prettier 
   for Visual Studio Code*”, then you’ll find it inside the folder `./S04/E02`.
