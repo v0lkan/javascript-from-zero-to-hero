@@ -56,6 +56,6 @@ Copyright © [Volkan Özçelik](mailto:me@volkan.io). All rights reserved.
 
 > The human-readable, single-line, **TL;DR:** of the above license:
 > 
-> 👉 I’m distributing the code for your **personal** and **fair use**.
+> 👉 I’m distributing this repository for your **personal** and **fair use**.
 > 
 > When in doubt, [shoot me an email](mailto:me@volkan.io).
