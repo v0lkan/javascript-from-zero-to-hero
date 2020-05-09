@@ -17,7 +17,7 @@ This repository contains the **source code** and the **starter files** of
 It’s a **work-in-progress**, and it’ll be finalized and tagged once the course is
 finalized.
 
-## About the Folder Structure of This Repo
+## The Folder Structure of This Repo
 
 The folders are grouped into “**sections**” and “**episodes**”. 
 
