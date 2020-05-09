@@ -52,9 +52,9 @@ can discuss it further there.
 ## License
 
 Copyright © [Volkan Özçelik](mailto:me@volkan.io). All rights reserved.
+[Check out the license file](LICENSE.md) for details.
+
+The human-readable **tl;dr:** of the license is:
 
 I’m distributing the code for your **personal** and **fair use**.
-
 When in doubt, [shoot me an email](mailto:me@volkan.io).
-
-Also, [check out the license file](LICENSE.md) for details.
