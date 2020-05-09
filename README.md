@@ -54,6 +54,7 @@ can discuss it further there.
 Copyright © [Volkan Özçelik](mailto:me@volkan.io). All rights reserved.
 [Check out the license file](LICENSE.md) for details.
 
+> 📌
 > The human-readable, single-line, **TL;DR:** of the above license:
 > 
 > 👉 I’m distributing this repository for your **personal** and **fair use**.
