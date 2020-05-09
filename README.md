@@ -9,7 +9,7 @@
 (& )`   (,((,((;( ))\,
 ```
 
-## About
+## 🦄 About
 
 This repository contains the **source code** and the **starter files** of 
 [JavaScript: from Zero to Hero](https://zerotohero.dev/).
@@ -17,7 +17,7 @@ This repository contains the **source code** and the **starter files** of
 It’s a **work-in-progress**, and it’ll be finalized and tagged once the course is
 finalized.
 
-## The Folder Structure of This Repo
+## 🗂 The Folder Structure of This Repo
 
 The folders are grouped into “**sections**” and “**episodes**”. 
 
@@ -39,7 +39,7 @@ following the videos, to clarify things, and fix errors, if any.
 
 I may also add, important side-notes as **README**s into those folders.  
 
-## Contributions and PRs
+## 🍴 Contributions and PRs
 
 Since the code in the repo needs to stay in sync with the videos, I typically do
 not accept PRs. 
@@ -49,13 +49,12 @@ can discuss it further there.
 
 [issue]: https://github.com/v0lkan/javascript-from-zero-to-hero/issues/new "File a New Issue"
 
-## License
+## 🔖 License
 
 Copyright © [Volkan Özçelik](mailto:me@volkan.io). All rights reserved.
 [Check out the license file](LICENSE.md) for details.
 
 > 📌
 > The human-readable, single-line, **TL;DR:** of the above license:<br>
-> 👉 I’m distributing this repository for your **personal** and **fair use**.
-> 
-> When in doubt, [shoot me an email](mailto:me@volkan.io).
+> 👉 I’m distributing this repository for your **personal** and **fair use**.<br>
+> 📪 When in doubt, [shoot me an email](mailto:me@volkan.io).
