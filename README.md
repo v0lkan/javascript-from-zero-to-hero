@@ -12,35 +12,21 @@
 ## About
 
 This repository contains the **source code** and the **starter files** of 
-[JavaScript: from Zero to Hero](https://zerotoherojs.com).
+[JavaScript: from Zero to Hero](https://zerotohero.dev/).
 
-It’s a work-in-progress, and it’ll be finalized and tagged once the course is
+It’s a **work-in-progress**, and it’ll be finalized and tagged once the course is
 finalized.
-
-## The “Zero to Hero” Community
-
-For news, updates, and important information about the courses;
-and to discuss things and get in touch with like-minded learning enthusiasts
-[**Join the “Zero to Hero” Spectrum Community**][community].
-
-The [**“Zero to Hero” Spectrum Community**][community]
-is free for **anyone** to join.
-
-When there is an important news to be shared, instead of polluting your email
-inboxes, I’ll create a post in the [**“Zero to Hero” Spectrum Community**][community]
-instead.
-
-I **hate** SPAM with passion and I never send useless junk to your inboxes. 
 
 ## About the Folder Structure of This Repo
 
-The folders are grouped into “sections” and “episodes”. Every “episode” corresponds
-to a specific video lesson.
+The folders are grouped into “**sections**” and “**episodes**”. 
+
+Every “**episode**” corresponds to a specific video lecture.
 
 Each folder contains the **completed work** that you’ll achieve by the end of that
-lesson.
+lecture.
 
-Let me explain it with an example; it’ll be clearer:
+To explain with an example:
 
 * If you are looking for the **completed work** for the lesson “*S04E02: Configuring Prettier 
   for Visual Studio Code*”, then you’ll find it inside the folder `./S04/E02`.
@@ -60,4 +46,13 @@ not accept PRs. Though, [you are welcome to create an issue][issue], and we
 can discuss it further there. 
 
 [issue]: https://github.com/v0lkan/javascript-from-zero-to-hero/issues/new "File a New Issue"
-[community]: https://spectrum.chat/z2h?tab=posts "JavaScript: from Zero to Hero Spectrum Community"
+
+## License
+
+Copyright © [Volkan Özçelik](mailto:me@volkan.io). All rights reserved.
+
+I’m distributing the code for your **personal** and **fair use**.
+
+When in doubt about your usage, [feel free to shoot me an email](mailto:me@volkan.io)
+
+Also, [Check out the license file](LICENSE.md) for details.
