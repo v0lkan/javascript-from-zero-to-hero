@@ -30,7 +30,7 @@ Be a good citizen: Use this code for your **own** good **only**.
 
 **Fair use**:
 
-- Copying parts of the code to your blog and add a link back to <https://zerotoherojs.com>,
+- Copying parts of the code to your blog and add a link back to <https://zerotohero.dev/>,
   and clearly stating the where you got the source code from (*i.e., giving a 
   proper attribution*)
 
@@ -38,7 +38,7 @@ Be a good citizen: Use this code for your **own** good **only**.
 
 - Copying all the code, putting it into a book, and selling the book.
 
-I trust, if you are interested in [JavaScript: from Zero to Hero](https://zerotoherojs.com),
+I trust, if you are interested in [JavaScript: from Zero to Hero](https://zerotohero.dev/),
 you are smart enough to realize what’s fair and what’s not and you don’t need
 no pep talk about it—but when in doubt, [**please ask me first**](mailto:volkan.io).
 
