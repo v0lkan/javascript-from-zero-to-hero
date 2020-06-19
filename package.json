@@ -10,13 +10,23 @@
     "type": "git",
     "url": "git+https://github.com/v0lkan/javascript-from-zero-to-hero.git"
   },
-  "keywords": ["JavaScript", "zen", "learning", "ramp-up", "kung-fu",
-    "fullstack", "there’s no such thing as fullstack!",
-    "I freaking hate the term fullstack!"],
+  "keywords": [
+    "JavaScript",
+    "zen",
+    "learning",
+    "ramp-up",
+    "kung-fu",
+    "fullstack",
+    "there’s no such thing as fullstack!",
+    "I freaking hate the term fullstack!"
+  ],
   "author": "Volkan Özçelik <me@volkan.io> (https://volkan.io)",
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/v0lkan/javascript-from-zero-to-hero/issues"
   },
-  "homepage": "https://github.com/v0lkan/javascript-from-zero-to-hero#readme"
+  "homepage": "https://github.com/v0lkan/javascript-from-zero-to-hero#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
 }
