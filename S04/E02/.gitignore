@@ -1,5 +1,14 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Node template
+#
+#  \
+#  \\,
+#   \\\,^,.,,.                    “Zero to Hero”
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+#
+
 # Logs
 logs
 *.log
@@ -44,8 +53,11 @@ typings/
 .env
 # next.js build output
 .next
+
+# Rest
 .idea
 .history
+.vscode
 .DS_Store
 /tmp
 /server/app/views/generated/styles.mustache
