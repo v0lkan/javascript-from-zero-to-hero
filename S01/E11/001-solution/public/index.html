@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+#
+#  \
+#  \\,
+#   \\\,^,.,,.                    “Zero to Hero”
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+#
+-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MarkEdit: A Simple, Efficient, Lightweight Markdown Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.zerotoherojs.com/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="normalize.css"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <textarea
+        class="text-editor"
+        spellcheck="false"
+        autocomplete="off"
+        autofocus
+      >
+## Create Your Markdown</textarea
+      >
+      <div class="preview"></div>
+    </div>
+    <script src="showdown.js"></script>
+    <script src="main.js"></script>
+    <!--
+       main-optimized.js is the “optimized” solution that “debounces”
+       the update of the preview area to the most appropriate moment.
+       See the lesson notes for more details.
+
+       To test that code, swap the above script tag with this one instead:
+
+       <script src="main-optimized.js"></script>
+    -->
+  </body>
+</html>

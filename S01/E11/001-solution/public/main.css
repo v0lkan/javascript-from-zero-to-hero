@@ -1,0 +1,72 @@
+/*
+ *  \
+ *  \\,
+ *   \\\,^,.,,.                    “Zero to Hero”
+ *   ,;7~((\))`;;,,               <zerotohero.dev>
+ *   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+ *    )  . ),((  ))\;,
+ *   /;`,,/7),)) )) )\,,
+ *  (& )`   (,((,((;( ))\,
+ */
+
+body {
+  font-size: 18px;
+  font-family: "Avenir Next", "Avenir", -apple-system, system-ui,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth;
+  font-weight: 400;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.main-content {
+  display: flex;
+  height: 100%;
+}
+
+.text-editor {
+  flex: 1;
+  padding: 30px;
+  border: 0;
+  resize: none;
+}
+
+.text-editor {
+  background: #ffffff;
+  color: #333333;
+}
+
+.text-editor {
+  font-size: 18px;
+  font-family: "Operator Mono Ssm", "Operator Mono", Monaco, Menlo,
+    "Courier New", Courier, monospace;
+  font-weight: 100;
+}
+
+.preview {
+  flex: 1;
+  padding: 0 50px;
+}
+
+.preview {
+  font-weight: 400;
+}
+
+.preview {
+  background: #f3f3f3;
+  color: #3d3d3d;
+  overflow: auto;
+}
+
+pre {
+  background: #e7e7e7;
+  padding: 10px;
+}
+
+blockquote {
+  background: #e7e7e7;
+  padding: 10px;
+}
