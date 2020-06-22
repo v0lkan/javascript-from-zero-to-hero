@@ -2,7 +2,7 @@
 \
 \\,
  \\\,^,.,,.                  JavaScript: from Zero to Hero
- ,;7~((\))`;;,,                   <zerotoherojs.com>
+ ,;7~((\))`;;,,                   <zerotohero.dev>
  ,(@') ;)`))\;;',     an extraordinary course to learn JavaScript
   )  . ),((  ))\;,             and related technologies
  /;`,,/7),)) )) )\,,
