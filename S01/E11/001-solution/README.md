@@ -21,7 +21,7 @@ example.
 
 > **Note**
 >
-> The examples here uses the [**classic** version of `yarn`][yarn].
+> The examples here use the [**classic** version of `yarn`][yarn].
 >
 > If you feel adventurous, [you can try using the current version too][yarn-next].
 >
