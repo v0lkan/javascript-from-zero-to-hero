@@ -25,7 +25,8 @@ example.
 >
 > If you feel adventurous, [you can try using the current version too][yarn-next].
 >
-> I haven’t tested thoroughly, but it should not make too much of a difference in our examples, and things should
-> work just fine in either version of `yarn`.
+> I haven’t tested thoroughly, but it should not make too much of a difference in our examples. 
+> 
+> Things should work just fine in either version of `yarn` too.
 
 [yarn-next]: https://yarnpkg.com/getting-started
