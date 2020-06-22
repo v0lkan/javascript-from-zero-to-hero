@@ -1,12 +1,12 @@
 ```text
-\
-\\,
- \\\,^,.,,.                  JavaScript: from Zero to Hero
- ,;7~((\))`;;,,                   <zerotohero.dev>
- ,(@') ;)`))\;;',     an extraordinary course to learn JavaScript
-  )  . ),((  ))\;,             and related technologies
- /;`,,/7),)) )) )\,,
-(& )`   (,((,((;( ))\,
+ \
+ \\,
+  \\\,^,.,,.                    “Zero to Hero”
+  ,;7~((\))`;;,,               <zerotohero.dev>
+  ,(@') ;)`))\;;',    stay up to date, be curious: learn
+   )  . ),((  ))\;,
+  /;`,,/7),)) )) )\,,
+ (& )`   (,((,((;( ))\,
 ```
 
 ## 🦄 About
