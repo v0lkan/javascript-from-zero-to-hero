@@ -9,6 +9,6 @@
  *  (& )`   (,((,((;( ))\,
  */
 
-/*
-   Editor’s style definitions come here.
- */
+const run = async () => {};
+
+run();

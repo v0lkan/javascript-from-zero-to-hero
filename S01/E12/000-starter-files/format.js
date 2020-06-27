@@ -10,5 +10,5 @@
  */
 
 /*
-   Editor’s style definitions come here.
+   Text formatting and processing happens here.
  */

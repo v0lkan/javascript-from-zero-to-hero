@@ -10,5 +10,6 @@
  */
 
 /*
-   Editor’s style definitions come here.
+   Cache, manages the work items.
+   It is a publisher-subscriber hub.
  */

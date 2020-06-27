@@ -1,0 +1,1101 @@
+WEBVTT
+
+1
+00:00:00.110 --> 00:00:01.090
+<v Volkan>In this use case,</v>
+
+2
+00:00:01.090 --> 00:00:03.460
+we'll create a command line application.
+
+3
+00:00:03.460 --> 00:00:07.360
+What we want to do is to read a bunch of subtitle files
+
+4
+00:00:07.360 --> 00:00:10.360
+and then clean up those files and by clean up,
+
+5
+00:00:10.360 --> 00:00:13.940
+I mean removing the redundant parts of those files
+
+6
+00:00:13.940 --> 00:00:16.810
+such as timestamps and section numbers
+
+7
+00:00:16.810 --> 00:00:18.400
+and certain meta tags.
+
+8
+00:00:18.400 --> 00:00:20.350
+and after cleaning up the files,
+
+9
+00:00:20.350 --> 00:00:23.400
+we'll save them to a separate distribution folder
+
+10
+00:00:23.400 --> 00:00:26.090
+or a dist folder as new files.
+
+11
+00:00:26.090 --> 00:00:28.570
+I'm planning to use those cleaned-up files
+
+12
+00:00:28.570 --> 00:00:32.250
+as transcripts for the video lessons of this course.
+
+13
+00:00:32.250 --> 00:00:34.930
+So this is not just a dummy application,
+
+14
+00:00:34.930 --> 00:00:37.040
+it's something practical that at least
+
+15
+00:00:37.040 --> 00:00:39.090
+I'll be needing and using.
+
+16
+00:00:39.090 --> 00:00:40.790
+So let's begin, shall we.
+
+17
+00:00:40.790 --> 00:00:44.110
+Here's how our typical transcript file looks like
+
+18
+00:00:44.110 --> 00:00:47.000
+and here is how the end result will look like
+
+19
+00:00:47.000 --> 00:00:49.220
+when we clean up the transcript file.
+
+20
+00:00:49.220 --> 00:00:50.590
+So in my project root,
+
+21
+00:00:50.590 --> 00:00:53.670
+there is a data folder that I have 30 or so
+
+22
+00:00:53.670 --> 00:00:57.050
+of those subtitle files that need cleaning up.
+
+23
+00:00:57.050 --> 00:00:58.910
+And again, under the project root,
+
+24
+00:00:58.910 --> 00:01:01.230
+I have created a dist folder
+
+25
+00:01:01.230 --> 00:01:05.700
+where we'll eventually save the cleaned up transcript files.
+
+26
+00:01:05.700 --> 00:01:08.500
+This run function will be our entry point
+
+27
+00:01:08.500 --> 00:01:10.390
+so let's outline what we want to do
+
+28
+00:01:10.390 --> 00:01:12.080
+inside that run function.
+
+29
+00:01:12.080 --> 00:01:14.493
+We want to get a list of transcript files
+
+30
+00:01:14.493 --> 00:01:16.640
+that we are going to process.
+
+31
+00:01:16.640 --> 00:01:19.430
+Then we'll initialize a buffer or a cache
+
+32
+00:01:19.430 --> 00:01:22.060
+that contains the names of those files
+
+33
+00:01:22.060 --> 00:01:24.740
+and we'll gradually consume that buffer
+
+34
+00:01:24.740 --> 00:01:26.900
+until all the files are processed
+
+35
+00:01:26.900 --> 00:01:29.130
+and there's nothing left in the buffer.
+
+36
+00:01:29.130 --> 00:01:32.380
+In essence, that's what our entire code will do.
+
+37
+00:01:32.380 --> 00:01:34.800
+So we are just going to fill in the blanks.
+
+38
+00:01:34.800 --> 00:01:39.070
+Also, since getting the files is more like an IO operation,
+
+39
+00:01:39.070 --> 00:01:41.200
+I'll require it from an ./io module
+
+40
+00:01:41.200 --> 00:01:43.340
+that we are going to create shortly
+
+41
+00:01:43.340 --> 00:01:46.400
+and we'll also move these cache-related init
+
+42
+00:01:46.400 --> 00:01:49.840
+and consume functions to their own ./cache module
+
+43
+00:01:49.840 --> 00:01:51.630
+and require it from there.
+
+44
+00:01:51.630 --> 00:01:55.330
+So let's first create this getTranscriptFiles method
+
+45
+00:01:55.330 --> 00:01:57.920
+as it is relatively simpler to implement.
+
+46
+00:01:57.920 --> 00:02:00.960
+First, we'll export this function like this
+
+47
+00:02:00.960 --> 00:02:03.760
+and then we'll write the body of the function.
+
+48
+00:02:03.760 --> 00:02:06.400
+So since this is an IO-related module,
+
+49
+00:02:06.400 --> 00:02:09.830
+I'll probably have to resolve paths and for that,
+
+50
+00:02:09.830 --> 00:02:13.470
+I'll require the join method of this path node module
+
+51
+00:02:13.470 --> 00:02:15.840
+which is a standard library function.
+
+52
+00:02:15.840 --> 00:02:18.790
+And also we'll be reading the subtitle files
+
+53
+00:02:18.790 --> 00:02:20.500 line:15%
+and we are also going to create
+
+54
+00:02:20.500 --> 00:02:23.070 line:15%
+and write clean up transcript files
+
+55
+00:02:23.070 --> 00:02:26.680 line:15%
+and we'll need to list the contents of our ./data folder
+
+56
+00:02:26.680 --> 00:02:29.400 line:15%
+to get a list of the subtitle files.
+
+57
+00:02:29.400 --> 00:02:32.810
+So for that, I'll add readFile, writeFile,
+
+58
+00:02:32.810 --> 00:02:37.360
+and readdir methods of the fs or file system node module.
+
+59
+00:02:37.360 --> 00:02:41.970
+Then I'll define my data and dist folders as constant paths
+
+60
+00:02:41.970 --> 00:02:45.170
+and I'll also define these two extensions as well.
+
+61
+00:02:45.170 --> 00:02:48.370
+So I'll read from the vtt subtitle files
+
+62
+00:02:48.370 --> 00:02:51.370
+and eventually save the cleaned-up transcript files
+
+63
+00:02:51.370 --> 00:02:54.060
+with markdown or md extension.
+
+64
+00:02:54.060 --> 00:02:57.340
+Since getTranscriptFiles is an async function,
+
+65
+00:02:57.340 --> 00:02:59.670
+we'll have to return a Promise from it.
+
+66
+00:02:59.670 --> 00:03:01.300
+And inside that promise,
+
+67
+00:03:01.300 --> 00:03:04.650
+we are going to read the contents of our data directory.
+
+68
+00:03:04.650 --> 00:03:07.990
+And if we cannot read the data directory for some reason,
+
+69
+00:03:07.990 --> 00:03:11.070
+we'll reject the promise and if everything is fine
+
+70
+00:03:11.070 --> 00:03:13.900
+and there is no error, we'll resolve the promise
+
+71
+00:03:13.900 --> 00:03:16.410
+with the list of files that we received.
+
+72
+00:03:16.410 --> 00:03:18.070
+So let's try this first.
+
+73
+00:03:18.070 --> 00:03:20.140
+I'll comment out the rest of the code
+
+74
+00:03:20.140 --> 00:03:23.460
+that we haven't written yet and once we run the code,
+
+75
+00:03:23.460 --> 00:03:27.090
+we get a list of files with ".vtt" extensions
+
+76
+00:03:27.090 --> 00:03:30.640
+so it looks good mostly but with just one problem.
+
+77
+00:03:30.640 --> 00:03:34.220
+We have this .keep file but I don't want to process
+
+78
+00:03:34.220 --> 00:03:36.550
+because it's not a subtitle file.
+
+79
+00:03:36.550 --> 00:03:38.820
+So how do I filter it out?
+
+80
+00:03:38.820 --> 00:03:41.270
+Well, since items is an array,
+
+81
+00:03:41.270 --> 00:03:44.400
+we can use the Array.prototype's filter method
+
+82
+00:03:44.400 --> 00:03:46.710
+to filter out the things that we don't want
+
+83
+00:03:46.710 --> 00:03:47.840
+out of that array.
+
+84
+00:03:47.840 --> 00:03:50.250
+So I don't want this .keep file;
+
+85
+00:03:50.250 --> 00:03:54.210
+and since I'm on a Mac system, sometimes my operating system
+
+86
+00:03:54.210 --> 00:03:58.090
+can create these .DS_Store files in my folders
+
+87
+00:03:58.090 --> 00:04:01.290
+and I don't want to include them in my file list as well
+
+88
+00:04:01.290 --> 00:04:03.290
+so I'll filter them out too.
+
+89
+00:04:03.290 --> 00:04:04.950
+And when we re-run the code,
+
+90
+00:04:04.950 --> 00:04:08.200
+we'll see that the .keep file is not included
+
+91
+00:04:08.200 --> 00:04:10.400
+in our list anymore so we are good.
+
+92
+00:04:10.400 --> 00:04:13.550
+That done, let's also create our cache module.
+
+93
+00:04:13.550 --> 00:04:16.720
+We'll need an init method to initialize our cache
+
+94
+00:04:16.720 --> 00:04:18.700
+and we'll need a consume method
+
+95
+00:04:18.700 --> 00:04:21.770
+that will gradually process what's inside the cache
+
+96
+00:04:21.770 --> 00:04:24.980
+until we exhaust everything that we have in the cache.
+
+97
+00:04:24.980 --> 00:04:26.770
+I'll create an internal store array.
+
+98
+00:04:26.770 --> 00:04:29.780
+And I'll also create this empty() function
+
+99
+00:04:29.780 --> 00:04:31.190
+which is a helper function
+
+100
+00:04:31.190 --> 00:04:33.250
+that checks the length of the array
+
+101
+00:04:33.250 --> 00:04:36.230
+and returns true if the store is indeed empty
+
+102
+00:04:36.230 --> 00:04:38.000
+and false otherwise.
+
+103
+00:04:38.000 --> 00:04:40.160
+And if our internal store is empty,
+
+104
+00:04:40.160 --> 00:04:43.050
+we'll immediate return a resolved promise
+
+105
+00:04:43.050 --> 00:04:45.040
+and that promise will indicate
+
+106
+00:04:45.040 --> 00:04:46.950
+that whatever we have in the store
+
+107
+00:04:46.950 --> 00:04:49.250
+has been consumed successfully.
+
+108
+00:04:49.250 --> 00:04:52.510
+Otherwise, we'll create a recursive promise chain
+
+109
+00:04:52.510 --> 00:04:53.870
+as follows:
+
+110
+00:04:53.870 --> 00:04:55.670
+First, we'll create a promise
+
+111
+00:04:55.670 --> 00:04:58.490
+that resolves with a subset of our batch
+
+112
+00:04:58.490 --> 00:05:01.450
+which is this getNextBatch function's return value
+
+113
+00:05:01.450 --> 00:05:04.090
+and then we'll chain that promise
+
+114
+00:05:04.090 --> 00:05:06.380
+to this consume method itself,
+
+115
+00:05:06.380 --> 00:05:08.730
+to process the next batch of items
+
+116
+00:05:08.730 --> 00:05:11.690
+on the next tick on a separate stack frame.
+
+117
+00:05:11.690 --> 00:05:14.320
+So as long as we have stuff in the store,
+
+118
+00:05:14.320 --> 00:05:18.130
+we'll chain consume and since consume returns a Promise,
+
+119
+00:05:18.130 --> 00:05:21.470
+we'll wait for its eventual fulfillment value.
+
+120
+00:05:21.470 --> 00:05:26.070
+And once the store is empty, we'll return a resolved promise
+
+121
+00:05:26.070 --> 00:05:28.700
+which will be our final resolution value
+
+122
+00:05:28.700 --> 00:05:32.260
+that will also end the chain of promises that we created.
+
+123
+00:05:32.260 --> 00:05:34.360
+So if this is the first time you are seeing
+
+124
+00:05:34.360 --> 00:05:36.730
+a recursive promise chain like this,
+
+125
+00:05:36.730 --> 00:05:39.380
+it might take a while to wrap your head around
+
+126
+00:05:39.380 --> 00:05:42.840
+so take your time and feel free to pause this video
+
+127
+00:05:42.840 --> 00:05:45.373
+and think about what this code is doing.
+
+128
+00:05:46.310 --> 00:05:48.050
+In the getNextBatch method,
+
+129
+00:05:48.050 --> 00:05:50.590
+I want to return a subset of items
+
+130
+00:05:50.590 --> 00:05:53.260
+and to determine the length of that subset,
+
+131
+00:05:53.260 --> 00:05:54.990
+I thought the amount of items
+
+132
+00:05:54.990 --> 00:05:58.760
+that we want to process in parallel need to be proportional
+
+133
+00:05:58.760 --> 00:06:01.830
+to the number of CPU cores that we have.
+
+134
+00:06:01.830 --> 00:06:04.740
+So roughly, I need to split my workload
+
+135
+00:06:04.740 --> 00:06:07.910
+across the number of CPUs that I have evenly.
+
+136
+00:06:07.910 --> 00:06:12.340
+So I'll get the number of CPUs by doing an os.cpus.length()
+
+137
+00:06:13.810 --> 00:06:17.360
+and then I'll splice my store array like this
+
+138
+00:06:17.360 --> 00:06:21.250
+and that code looks a bit funny but what it essentially does
+
+139
+00:06:21.250 --> 00:06:26.250
+is it will return the last CPU_COUNT items from the array
+
+140
+00:06:26.680 --> 00:06:28.840
+and then it will truncate the array.
+
+141
+00:06:28.840 --> 00:06:32.410
+So if we initially have 25 items in the array
+
+142
+00:06:32.410 --> 00:06:34.680
+and we have four CPU cores,
+
+143
+00:06:34.680 --> 00:06:38.440
+this function will return the last four items in the array
+
+144
+00:06:38.440 --> 00:06:43.130
+and also it will reduce the size of the array from 25 to 21.
+
+145
+00:06:43.130 --> 00:06:45.770
+And then when we call the getNextBatch again,
+
+146
+00:06:45.770 --> 00:06:47.930
+it will give another four items
+
+147
+00:06:47.930 --> 00:06:51.700
+and the size of the array will be reduced down to 17
+
+148
+00:06:51.700 --> 00:06:52.533
+and so on.
+
+149
+00:06:58.430 --> 00:07:01.530
+So let's log the length of the store here
+
+150
+00:07:01.530 --> 00:07:04.580
+and we also need to fill in this init method.
+
+151
+00:07:04.580 --> 00:07:08.130
+The init method was taking a list of files
+
+152
+00:07:08.130 --> 00:07:11.660
+so for each file that this init function receives,
+
+153
+00:07:11.660 --> 00:07:14.800
+we are going to push that file name to the store
+
+154
+00:07:14.800 --> 00:07:16.390
+and now when we run the code,
+
+155
+00:07:16.390 --> 00:07:19.640
+we can see that the consume is processing the store,
+
+156
+00:07:19.640 --> 00:07:23.280
+four by four, which is the number of CPU cores that I have
+
+157
+00:07:23.280 --> 00:07:26.050
+so it looks like that part of the code is working.
+
+158
+00:07:26.050 --> 00:07:28.320
+So I'll extract this dummy promise
+
+159
+00:07:28.320 --> 00:07:32.850
+into a cleanupFiles method which will take an array of files
+
+160
+00:07:32.850 --> 00:07:36.460
+and return a "resolved" promise and when we run the code,
+
+161
+00:07:36.460 --> 00:07:38.620
+it will work just as it did before.
+
+162
+00:07:38.620 --> 00:07:43.180
+And I also want to move this cleanupFiles to ./io.js
+
+163
+00:07:43.180 --> 00:07:45.650
+since we'll likely be reading files
+
+164
+00:07:45.650 --> 00:07:49.290
+and writing to files in that cleanupFiles function.
+
+165
+00:07:49.290 --> 00:07:52.920
+So that function is a better fit for the ./io module
+
+166
+00:07:52.920 --> 00:07:55.980
+and then we'll start writing the body of the function.
+
+167
+00:07:55.980 --> 00:07:59.360
+So to utilize all the CPU cores that we have,
+
+168
+00:07:59.360 --> 00:08:02.480
+we'll transform these files in parallel
+
+169
+00:08:02.480 --> 00:08:05.620
+and for that, we'll use Promise.all().
+
+170
+00:08:05.620 --> 00:08:09.470
+And since Promise.all() accepts an Array of Promises,
+
+171
+00:08:09.470 --> 00:08:12.500
+we'll map this files collection that we have
+
+172
+00:08:12.500 --> 00:08:14.940
+into an Array of Promises like this.
+
+173
+00:08:14.940 --> 00:08:17.040
+For now, I'll just log the file
+
+174
+00:08:17.040 --> 00:08:20.960
+and simply resolve the promise and test if the code works
+
+175
+00:08:20.960 --> 00:08:23.150
+and it looks like it's working.
+
+176
+00:08:23.150 --> 00:08:24.880
+And then for each file,
+
+177
+00:08:24.880 --> 00:08:27.960
+I'll read the file in the data directory
+
+178
+00:08:27.960 --> 00:08:31.160
+and then do a "clean up" transformation on the file
+
+179
+00:08:31.160 --> 00:08:33.870
+in this handleFileCleanup method.
+
+180
+00:08:33.870 --> 00:08:35.910
+I'll pass the resolve function
+
+181
+00:08:35.910 --> 00:08:39.090
+as an argument to handleFileCleanup
+
+182
+00:08:39.090 --> 00:08:42.780
+so that I can execute it from within that function as well.
+
+183
+00:08:42.780 --> 00:08:45.630
+And when I test it, it will run identical
+
+184
+00:08:45.630 --> 00:08:48.560
+to what we had before, nothing surprising.
+
+185
+00:08:48.560 --> 00:08:51.520
+So now, I'll just do a tiny change
+
+186
+00:08:51.520 --> 00:08:54.270
+and instead of passing file as a parameter,
+
+187
+00:08:54.270 --> 00:08:57.910
+I'll pass it as a destructured object like this
+
+188
+00:08:57.910 --> 00:09:00.120
+and again, it's just syntactic sugar
+
+189
+00:09:00.120 --> 00:09:03.147
+and nothing will change in the code execution.
+
+190
+00:09:03.147 --> 00:09:06.780
+Now I'll do something interesting and I'll increase
+
+191
+00:09:06.780 --> 00:09:09.920
+the order of this handleFileCleanup function.
+
+192
+00:09:09.920 --> 00:09:11.770
+So instead of a plain function,
+
+193
+00:09:11.770 --> 00:09:14.390
+it will be a function that returns a function
+
+194
+00:09:14.390 --> 00:09:16.590
+also known as a higher-order function.
+
+195
+00:09:16.590 --> 00:09:20.380
+For that, I'll take this error and data parameters here
+
+196
+00:09:20.380 --> 00:09:21.860
+and move them here.
+
+197
+00:09:21.860 --> 00:09:22.980
+And if you think about it,
+
+198
+00:09:22.980 --> 00:09:25.030
+nothing has changed in the code again.
+
+199
+00:09:25.030 --> 00:09:27.100
+And when we execute the code,
+
+200
+00:09:27.100 --> 00:09:29.050
+we'll still get the same output;
+
+201
+00:09:29.050 --> 00:09:31.910
+but this way, we have separated our concerns
+
+202
+00:09:31.910 --> 00:09:33.490
+just a little bit better.
+
+203
+00:09:33.490 --> 00:09:35.640
+Now let's fill in this handler
+
+204
+00:09:35.640 --> 00:09:38.370
+and if there is an error while reading the file,
+
+205
+00:09:38.370 --> 00:09:41.450
+we'll just reject and return like this.
+
+206
+00:09:41.450 --> 00:09:43.810
+And if we can read the file contents,
+
+207
+00:09:43.810 --> 00:09:47.200
+we'll write the file without modifying it at all
+
+208
+00:09:47.200 --> 00:09:49.220
+to the distribution directory.
+
+209
+00:09:49.220 --> 00:09:51.030
+The only thing that we are going to change
+
+210
+00:09:51.030 --> 00:09:55.540
+will be changing the file extension from vtt to markdown.
+
+211
+00:09:55.540 --> 00:09:56.900
+Again, if there is an error,
+
+212
+00:09:56.900 --> 00:09:58.890
+we are going to reject the promise
+
+213
+00:09:58.890 --> 00:10:00.230
+and if there is no error,
+
+214
+00:10:00.230 --> 00:10:03.090
+we are going to resolve with a success message.
+
+215
+00:10:03.090 --> 00:10:04.510
+And when we run the code,
+
+216
+00:10:04.510 --> 00:10:08.640
+we'll see that our ./dist folder is populated as we expected
+
+217
+00:10:08.640 --> 00:10:10.850
+Now let's say we want to change this data
+
+218
+00:10:10.850 --> 00:10:12.790
+instead of directly writing it.
+
+219
+00:10:12.790 --> 00:10:14.470
+So we are going to pass it through
+
+220
+00:10:14.470 --> 00:10:18.270
+a cleanVttContent function that we'll create shortly.
+
+221
+00:10:18.270 --> 00:10:21.840
+And since string clean up is more of a formatting thing,
+
+222
+00:10:21.840 --> 00:10:25.100
+I'm going to create the code inside a ./format module
+
+223
+00:10:25.100 --> 00:10:28.010
+and I'm going to require it here like this.
+
+224
+00:10:28.010 --> 00:10:31.960
+And for now, I'll just create an identity transformation
+
+225
+00:10:31.960 --> 00:10:33.910
+as in here or actually,
+
+226
+00:10:33.910 --> 00:10:36.440
+let's convert the content to UPPERCASE
+
+227
+00:10:36.440 --> 00:10:38.310
+just for the sake of testing it
+
+228
+00:10:38.310 --> 00:10:42.410
+to see a change in the output and then we'll run the code.
+
+229
+00:10:42.410 --> 00:10:45.160
+And when we look into the ./dist folder,
+
+230
+00:10:45.160 --> 00:10:48.850
+we'll see that the output text is all uppercase.
+
+231
+00:10:48.850 --> 00:10:50.880
+So our transformer is working.
+
+232
+00:10:50.880 --> 00:10:54.780
+We just need to define what to replace and how to replace it
+
+233
+00:10:54.780 --> 00:10:56.240
+which we'll do next.
+
+234
+00:10:56.240 --> 00:10:59.400
+For that, I'll create a bunch of constants first.
+
+235
+00:10:59.400 --> 00:11:02.070
+This BY_NEW_LINE is a regular expression
+
+236
+00:11:02.070 --> 00:11:06.520
+that we will use to split the text into an array of lines.
+
+237
+00:11:06.520 --> 00:11:10.120
+These two TAG regular expressions are to match
+
+238
+00:11:10.120 --> 00:11:14.050
+and remove the vtt author tags that you see here.
+
+239
+00:11:14.050 --> 00:11:16.970
+This VTT_ARROW is the timestamp arrow
+
+240
+00:11:16.970 --> 00:11:19.460
+that I want to filter out the entire line
+
+241
+00:11:19.460 --> 00:11:20.990
+if I see that arrow.
+
+242
+00:11:20.990 --> 00:11:23.660
+And this WEBVTT is the header line
+
+243
+00:11:23.660 --> 00:11:25.580
+that I want to get rid of as well.
+
+244
+00:11:25.580 --> 00:11:29.730
+So when we split the data by this new line expression,
+
+245
+00:11:29.730 --> 00:11:31.980
+we get an array that we can work on.
+
+246
+00:11:31.980 --> 00:11:36.240
+Then we first filter out the blank lines by this expression
+
+247
+00:11:36.240 --> 00:11:38.450
+and after that, we exclude the lines
+
+248
+00:11:38.450 --> 00:11:40.660
+that have vtt arrows in them,
+
+249
+00:11:40.660 --> 00:11:44.070
+followed by excluding the vtt header as well.
+
+250
+00:11:44.070 --> 00:11:47.320
+Then we remove any lines that only contain a number
+
+251
+00:11:47.320 --> 00:11:49.440
+but nothing else and after that,
+
+252
+00:11:49.440 --> 00:11:51.910
+we join the array into a single string
+
+253
+00:11:51.910 --> 00:11:54.780
+by adding a new line at the end of each entry.
+
+254
+00:11:54.780 --> 00:11:57.040
+And finally, we remove the beginning
+
+255
+00:11:57.040 --> 00:11:59.910
+and ending author tags from the text
+
+256
+00:11:59.910 --> 00:12:02.100
+and return it as our outcome.
+
+257
+00:12:02.100 --> 00:12:04.950
+And that outcome will eventually be written
+
+258
+00:12:04.950 --> 00:12:07.650
+into the transcript markdown file.
+
+259
+00:12:07.650 --> 00:12:09.310
+Wow, that was a mouthful.
+
+260
+00:12:09.310 --> 00:12:11.370
+So let's test if it works.
+
+261
+00:12:11.370 --> 00:12:14.540
+But before that, I want to rename these variables
+
+262
+00:12:14.540 --> 00:12:18.480
+because I prefer using camelCase in regular expressions
+
+263
+00:12:18.480 --> 00:12:20.260
+but this is just a rename
+
+264
+00:12:20.260 --> 00:12:23.140
+so it won't impact how the code works anyway.
+
+265
+00:12:23.140 --> 00:12:25.880
+So when we run the code and check the output,
+
+266
+00:12:25.880 --> 00:12:29.110
+I see that all the contents have been cleaned up
+
+267
+00:12:29.110 --> 00:12:31.790
+and the resultant transcript markdown files
+
+268
+00:12:31.790 --> 00:12:33.870
+are reasonably easy to follow.
+
+269
+00:12:33.870 --> 00:12:35.470
+So they are ready to be added
+
+270
+00:12:35.470 --> 00:12:38.840
+to those lessons' pages as transcripts.
+
+271
+00:12:38.840 --> 00:12:42.650
+And this code actually saved me hours of frustration
+
+272
+00:12:42.650 --> 00:12:44.980
+and hours of manual editing time
+
+273
+00:12:44.980 --> 00:12:47.200
+so I'm really happy with this outcome.
+
+274
+00:12:47.200 --> 00:12:50.480
+And as the saying goes, don't do anything yourself
+
+275
+00:12:50.480 --> 00:12:52.500
+when a machine can do it for you.

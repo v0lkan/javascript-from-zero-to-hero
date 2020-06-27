@@ -10,5 +10,5 @@
  */
 
 /*
-   Editor’s style definitions come here.
+   File system operations come here.
  */
