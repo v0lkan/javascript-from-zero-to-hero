@@ -32,11 +32,12 @@ example.
 
 > **Note**
 >
-> The examples here uses the [**classic** version of `yarn`][yarn].
+> The examples here use the [**classic** version of `yarn`][yarn].
 >
 > If you feel adventurous, [you can try using the current version too][yarn-next].
 >
-> It should not make too much of a difference in our examples, and things should
-> work just fine in either version of `yarn`.
+> I haven’t tested thoroughly, but it should not make too much of a difference in our examples. 
+> 
+> Things should work just fine in either version of `yarn` too.
 
 [yarn-next]: https://yarnpkg.com/getting-started
