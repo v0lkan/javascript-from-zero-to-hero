@@ -24,7 +24,9 @@ let tid;
  *  Update the preview area from the cached `html` value
  *  on the next available animation frame.
  */
-const renderPreview = () => {
+const renderPreview = (value) => {
+  var html = converter.makeHtml(value);
+
   window.cancelAnimationFrame(id);
   id = window.requestAnimationFrame(() => {
     preview.innerHTML = html;
@@ -33,7 +35,7 @@ const renderPreview = () => {
 
 textEditor.addEventListener("keyup", (evt) => {
   const { value } = evt.target;
-
+  
   // Debounce the update of the preview area if the user is typing.
   // The update will wait at least half a second after the user
   // types his last key.
@@ -42,17 +44,15 @@ textEditor.addEventListener("keyup", (evt) => {
   // (see the lesson notes for that).
   clearTimeout(tid);
   tid = setTimeout(() => {
-    html = converter.makeHtml(value);
     window.localStorage.setItem("markdown", value);
-    renderPreview();
+    renderPreview(value);
   }, 500);
 });
 
 const storedMarkdown = window.localStorage.getItem("markdown");
-
 if (storedMarkdown) {
   textEditor.value = storedMarkdown;
-  renderPreview();
+  renderPreview(storedMarkdown);
 } else {
-  renderPreview();
+  renderPreview(storedMarkdown);
 }
