@@ -19,7 +19,7 @@ I hate legal stuff: Please don’t make me write more.
 
 Be a good citizen: Use this code for your **own** good **only**.
 
-### At A Glance
+### At a Glance
 
 - You ARE allowed to keep this package for your **personal** reference.
 - You ARE allowed to share it with your peers (*dude(tte), this is a public repo*).
