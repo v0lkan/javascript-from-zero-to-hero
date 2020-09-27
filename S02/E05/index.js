@@ -81,6 +81,7 @@
 }
 
 {
+  // noinspection JSPrimitiveTypeWrapperUsage
   const str = new String('hello');
   console.log(str instanceof Object); // true
   console.log(str instanceof String);  // true
