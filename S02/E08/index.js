@@ -8,13 +8,19 @@
  *   /;`,,/7),)) )) )\,,
  *  (& )`   (,((,((;( ))\,
  */
+
 {
   class GameEntity {
-    shoot() {console.log('kaboom!');}
+    shoot() {
+      console.log('kaboom!');
+    }
   }
 
-  class Spaceship extends GameEntity {}
-  class AlienSpaceship extends Spaceship {}
+  class Spaceship extends GameEntity {
+  }
+
+  class AlienSpaceship extends Spaceship {
+  }
 
   const zorg = new AlienSpaceship();
 
