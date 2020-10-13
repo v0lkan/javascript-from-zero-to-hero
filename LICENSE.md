@@ -31,7 +31,7 @@ Be a good citizen: Use this code for your **own** good **only**.
 **Fair use**:
 
 - Copying parts of the code to your blog and add a link back to <https://zerotohero.dev/>,
-  and clearly stating the where you got the source code from (*i.e., giving a 
+  and clearly stating where you got the source code from (*i.e., giving a 
   proper attribution*)
 
 **Unfair use**:
