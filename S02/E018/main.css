@@ -1,0 +1,37 @@
+/*
+ *  \
+ *  \\,
+ *   \\\,^,.,,.                    “Zero to Hero”
+ *   ,;7~((\))`;;,,               <zerotohero.dev>
+ *   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+ *    )  . ),((  ))\;,
+ *   /;`,,/7),)) )) )\,,
+ *  (& )`   (,((,((;( ))\,
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #161821;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  border: 1px #535762 solid;
+  background: #292b39;
+}
