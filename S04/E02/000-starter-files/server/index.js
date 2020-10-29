@@ -9,6 +9,5 @@
  *  (& )`   (,((,((;( ))\,
  */
 
-console.log('Hello World');
+// The new server implementation goes here.
 
-setInterval(() => {}, 1000);

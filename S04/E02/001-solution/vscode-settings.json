@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "editor.renderIndentGuides": true,
+  "editor.renderLineHighlight": "gutter",
+  "editor.parameterHints.enabled": false,
+  "explorer.autoReveal": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "window.zoomLevel": 2,
+  "workbench.tips.enabled": false,
+  "flow.useNPMPackagedFlow": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Operator Mono Ssm, PragmataPro Mono, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "editor.fontWeight": "100",
+  "terminal.integrated.fontFamily": "Operator Mono Ssm",
+  "terminal.integrated.fontWeight": "100"
+}
