@@ -1,0 +1,21 @@
+{
+  "name": "z2hjs-web-dojo",
+  "version": "0.5.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-jsbites": "^2.1.2",
+    "flow-bin": "^0.136.0",
+    "prettier": "^2.1.2",
+    "sass-lint": "^1.13.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "serve": "bin/serve.sh",
+    "start": "bin/serve.sh",
+    "test": "bin/test.sh"
+  }
+}

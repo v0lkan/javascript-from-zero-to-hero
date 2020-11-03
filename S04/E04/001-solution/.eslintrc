@@ -1,0 +1,23 @@
+{
+  "extends": "eslint-config-jsbites",
+  "rules": {
+    "indent": "off",
+    "space-before-function-paren": "off",
+    "max-len": "off",
+    "object-curly-spacing": "off"
+  },
+  "globals": {
+    "SyntheticEvent": true,
+    "SyntheticAnimationEvent": true,
+    "SyntheticClipboardEvent": true,
+    "SyntheticCompositionEvent": true,
+    "SyntheticInputEvent": true,
+    "SyntheticUIEvent": true,
+    "SyntheticFocusEvent": true,
+    "SyntheticKeyboardEvent": true,
+    "SyntheticMouseEvent": true,
+    "SyntheticDragEvent": true,
+    "SyntheticWheelEvent": true,
+    "SyntheticTouchEvent": true
+  }
+}
