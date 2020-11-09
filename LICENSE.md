@@ -38,7 +38,7 @@ Be a good citizen: Use this code for your **own** good **only**.
 
 - Copying all the code, putting it into a book, and selling the book.
 
-I trust, if you are interested in [JavaScript: from Zero to Hero](https://zerotohero.dev/),
+I trust, if you are interested in [Zero to Hero](https://zerotohero.dev/),
 you are smart enough to realize what’s fair and what’s not and you don’t need
 no pep talk about it—but when in doubt, [**please ask me first**](mailto:volkan.io).
 
