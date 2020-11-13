@@ -1,7 +1,6 @@
 {
-  "name": "z2hjs-s01e11-creating-your-first-markdown-editor",
+  "name": "s01e11",
   "version": "0.5.0",
-  "license": "UNLICENSED",
   "dependencies": {
     "normalize.css": "^8.0.1",
     "showdown": "^1.9.1"

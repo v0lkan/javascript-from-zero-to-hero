@@ -1,8 +1,7 @@
 {
-  "name": "z2hjs-web-dojo",
+  "name": "s04e03",
   "version": "0.5.0",
   "main": "index.js",
-  "license": "UNLICENSED",
   "devDependencies": {
     "eslint": "^7.12.1",
     "eslint-config-jsbites": "^2.1.2",

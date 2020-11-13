@@ -1,10 +1,7 @@
 {
-  "name": "z2hjs-lessons-web",
+  "name": "s04e01",
   "version": "0.5.0",
-  "description": "Website for the video lessons of JavaScript: from Zero to Hero",
   "main": "index.js",
-  "author": "Volkan Özçelik <me@volkan.io> (https://volkan.io)",
-  "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "serve": "bin/serve.sh",
