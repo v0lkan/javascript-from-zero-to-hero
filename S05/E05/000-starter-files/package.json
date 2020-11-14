@@ -1,0 +1,21 @@
+{
+  "name": "s05e05",
+  "version": "0.5.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "serve": "./bin/serve.sh",
+    "start": "./bin/serve.sh",
+    "test": "./bin/test.sh",
+    "build": "./bin/build.sh",
+    "pub": "./bin/publish.sh",
+    "sub": "./bin/subscribe.sh"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pubnub": "^4.29.9"
+  }
+}
