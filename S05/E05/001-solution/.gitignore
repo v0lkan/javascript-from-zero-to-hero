@@ -1,0 +1,21 @@
+#
+#  \
+#  \\,
+#   \\\,^,.,,.                    “Zero to Hero”
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+#
+
+# Yarn integrity file
+.yarn-integrity
+
+# Dotenv environment variables
+.env
+
+# IDE-specific
+.idea
+.code
+.history
