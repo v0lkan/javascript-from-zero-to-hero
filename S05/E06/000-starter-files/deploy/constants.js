@@ -9,8 +9,6 @@
  *  (& )`   (,((,((;( ))\,
  */
 
-import publish from './publish.js';
-import subscribe from './subscribe.js';
-
-subscribe();
-publish();
+export const CHANNEL_NAME = 'z2hjs-ops';
+export const ACTION_DEPLOY = 'deploy';
+export const CATEGORY_CONNECTED = 'PNConnectedCategory';

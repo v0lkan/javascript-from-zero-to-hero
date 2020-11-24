@@ -1,0 +1,12 @@
+[ignore]
+.*/dist/*.
+.*/public/*.
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='.*\.scss' -> 'empty/object'
