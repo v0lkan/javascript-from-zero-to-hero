@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+#
+#  \
+#  \\,
+#   \\\,^,.,,.                    “Zero to Hero”
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+#
+
+cd /opt/zero-to-hero-js
+
+mv zero-to-hero-nightly zero-to-hero-nightly-lastworking-1
+
+git clone git@github.com:v0lkan/z2hjs-dojo.git \
+/opt/zero-to-hero-js/zero-to-hero-nightly

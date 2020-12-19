@@ -1,0 +1,17 @@
+# ~/.ssh/config
+
+#
+#  \
+#  \\,
+#   \\\,^,.,,.                    “Zero to Hero”
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+#
+
+host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/github_rsa
+  User git

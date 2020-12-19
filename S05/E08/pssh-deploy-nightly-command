@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+#
+#  \
+#  \\,
+#   \\\,^,.,,.                    “Zero to Hero”
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+#
+
+git pull
+
+if [ $? -gt 0]; then
+  echo "Poop -2"
+  exit 1
+fi
+
+yarn install
+
+if [ $? -gt 0]; then
+  echo "Poop -3"
+  exit 1
+fi
+
+yarn build
+
+if [ $? -gt 0]; then
+  echo "Poop -4"
+  exit 1
+fi
+
+pm2 restart all
+
+if [ $? -gt 0]; then
+  echo "Poop -5"
+  exit 1
+fi
+
+pm2 list
